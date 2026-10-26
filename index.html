@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หลักเกณฑ์การจัดซื้อจัดจ้างฯ ค.ศ. 2016 (แก้ไขเพิ่มเติม 2024) - โรงพยาบาลกรุงเทพคริสเตียน</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Prompt & Sarabun -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Prompt', 'sans-serif'],
+            body: ['Sarabun', 'sans-serif'],
+          },
+          colors: {
+            bch: {
+              navy: '#0f2942',
+              blue: '#1d4ed8',
+              lightBlue: '#eff6ff',
+              teal: '#0d9488',
+              emerald: '#047857',
+              amber: '#d97706',
+              purple: '#6d28d9'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Prompt', sans-serif;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Highlight pulse when using the budget checker */
+    @keyframes highlightPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); }
+      50% { box-shadow: 0 0 0 6px rgba(234, 179, 8, 0.45); }
+    }
+    .tier-highlight {
+      outline: 3px solid #eab308 !important;
+      animation: highlightPulse 2s infinite;
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+
+    /* A4 Preview Mode on Screen */
+    .a4-preview-mode {
+      max-width: 210mm !important;
+      margin: 0 auto !important;
+      background: white !important;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18) !important;
+      padding: 8mm !important;
+      border-radius: 4px !important;
+    }
+
+    /* Print Media Styles for Exact Single-Page A4 Output */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 5mm;
+      }
+
+      html, body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        font-size: 9.5pt !important;
+        line-height: 1.28 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      #infographic-canvas {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+
+      .print-compact-header {
+        padding: 10px 14px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .print-compact-title {
+        font-size: 15pt !important;
+        line-height: 1.2 !important;
+      }
+
+      .print-compact-subtitle {
+        font-size: 9.5pt !important;
+      }
+
+      .print-grid-2col {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+      }
+
+      .print-grid-4col {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 6px !important;
+      }
+
+      .print-card {
+        padding: 7px 9px !important;
+        margin-bottom: 5px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .print-section-gap {
+        margin-top: 7px !important;
+      }
+
+      .print-text-xs {
+        font-size: 8pt !important;
+        line-height: 1.22 !important;
+      }
+
+      .print-text-sm {
+        font-size: 8.8pt !important;
+        line-height: 1.25 !important;
+      }
+
+      .tier-highlight {
+        outline: none !important;
+        animation: none !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-12">
+
+  <!-- Top Interactive Control Bar (Hidden when printing) -->
+  <nav class="no-print sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md text-white border-b border-slate-700 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand / Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-teal-400 flex items-center justify-center shadow-md shrink-0">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="font-heading font-bold text-sm sm:text-base tracking-wide flex items-center gap-2">
+            <span>อินโฟกราฟิกสรุปหลักเกณฑ์จัดซื้อจัดจ้าง</span>
+            <span class="hidden md:inline-block text-xs px-2 py-0.5 bg-blue-500/20 text-blue-300 border border-blue-400/30 rounded-full">รพ.กรุงเทพคริสเตียน</span>
+          </div>
+          <p class="text-xs text-slate-400">ฉบับปรับปรุง ค.ศ. 2016 และแก้ไขเพิ่มเติม ค.ศ. 2024 (สถาบันขนาดใหญ่)</p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center gap-2">
+        <!-- Toggle Interactive Calculator -->
+        <button id="btn-toggle-calc" onclick="toggleCalculator()" class="px-3 py-2 rounded-lg text-xs sm:text-sm font-heading font-medium bg-amber-500/20 text-amber-300 hover:bg-amber-500/30 border border-amber-400/40 flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+          </svg>
+          <span>เช็ควงเงินอัตโนมัติ</span>
+        </button>
+
+        <!-- View Switcher -->
+        <div class="bg-slate-800 p-1 rounded-lg border border-slate-700 flex items-center">
+          <button id="btn-view-poster" onclick="switchView('poster')" class="px-2.5 py-1.5 rounded-md text-xs font-heading font-medium bg-blue-600 text-white shadow transition">
+            อินโฟกราฟิก
+          </button>
+          <button id="btn-view-a4" onclick="switchView('a4')" class="px-2.5 py-1.5 rounded-md text-xs font-heading font-medium text-slate-300 hover:text-white transition">
+            จำลองหน้า A4
+          </button>
+          <button id="btn-view-table" onclick="switchView('table')" class="px-2.5 py-1.5 rounded-md text-xs font-heading font-medium text-slate-300 hover:text-white transition">
+            ตารางเปรียบเทียบ
+          </button>
+        </div>
+
+        <!-- Print / Save PDF Button -->
+        <button onclick="printInfographic()" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-heading font-semibold bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-md flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+          </svg>
+          <span>พิมพ์ / บันทึก PDF (A4)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Interactive Quick Budget Checker Drawer -->
+    <div id="calculator-drawer" class="hidden bg-slate-800/95 border-t border-slate-700 px-4 py-4 transition-all">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-stretch lg:items-end gap-4">
+          <div class="w-full lg:w-1/4">
+            <label class="block text-xs font-heading text-slate-300 mb-1">1. เลือกประเภทการดำเนินการ</label>
+            <select id="calc-type" onchange="runBudgetCheck()" class="w-full rounded-lg bg-slate-900 border border-slate-600 text-white px-3 py-2 text-sm focus:outline-none focus:border-amber-400">
+              <option value="buy">ส่วนที่ 1: การจัดซื้อ (วัสดุ ครุภัณฑ์ ที่ดิน ฯลฯ)</option>
+              <option value="hire">ส่วนที่ 2: การจัดจ้างทั่วไป (บริการ / จ้างทำของ)</option>
+              <option value="construct">ส่วนที่ 2 & 3: การจัดจ้างก่อสร้าง / ปรับปรุงอาคาร</option>
+            </select>
+          </div>
+          <div class="w-full lg:w-1/4">
+            <label class="block text-xs font-heading text-slate-300 mb-1">2. ระบุวงเงินงบประมาณ (บาท)</label>
+            <div class="relative">
+              <input id="calc-amount" type="number" min="1" step="1000" value="250000" oninput="runBudgetCheck()" placeholder="เช่น 250000" class="w-full rounded-lg bg-slate-900 border border-slate-600 text-white pl-3 pr-12 py-2 text-sm focus:outline-none focus:border-amber-400 font-heading">
+              <span class="absolute right-3 top-2 text-xs text-slate-400">บาท</span>
+            </div>
+          </div>
+          <!-- Preset quick buttons -->
+          <div class="w-full lg:w-2/4 flex flex-wrap items-center gap-1.5">
+            <span class="text-xs text-slate-400 mr-1">ตัวอย่างวงเงิน:</span>
+            <button onclick="setQuickAmount(35000)" class="px-2.5 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs text-slate-200 transition">35,000 บ.</button>
+            <button onclick="setQuickAmount(250000)" class="px-2.5 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs text-slate-200 transition">250,000 บ.</button>
+            <button onclick="setQuickAmount(1500000)" class="px-2.5 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs text-slate-200 transition">1.5 ล้าน</button>
+            <button onclick="setQuickAmount(5000000)" class="px-2.5 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs text-slate-200 transition">5 ล้าน</button>
+            <button onclick="setQuickAmount(75000000)" class="px-2.5 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs text-slate-200 transition">75 ล้าน</button>
+            <button onclick="setQuickAmount(250000000)" class="px-2.5 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs text-slate-200 transition">250 ล้าน</button>
+            <button onclick="clearHighlights()" class="ml-auto px-2.5 py-1 rounded bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-400/30 text-xs transition">ล้างไฮไลท์</button>
+          </div>
+        </div>
+
+        <!-- Result Banner inside Calculator -->
+        <div id="calc-result-box" class="mt-3 p-3 rounded-xl bg-slate-900/90 border border-amber-400/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+          <div class="space-y-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <span id="calc-badge-method" class="px-2.5 py-0.5 rounded-full text-xs font-heading font-bold bg-amber-400 text-slate-900">วิธีสอบราคา</span>
+              <span id="calc-title" class="font-heading font-semibold text-amber-300 text-sm">วงเงิน 50,001 - 400,000 บาท</span>
+            </div>
+            <p id="calc-prep" class="text-xs sm:text-sm text-slate-200"></p>
+          </div>
+          <div class="shrink-0 bg-slate-800 px-3.5 py-2 rounded-lg border border-slate-700 text-right w-full md:w-auto">
+            <span class="block text-[11px] text-slate-400">ผู้มีอำนาจอนุมัติ</span>
+            <span id="calc-approver" class="font-heading font-bold text-emerald-400 text-xs sm:text-sm">ผู้จัดการร่วมกับผู้อำนวยการ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Wrapper -->
+  <main class="max-w-6xl mx-auto px-3 sm:px-6 pt-5">
+
+    <!-- ==================== VIEW 1: ONE-PAGE INFOGRAPHIC ==================== -->
+    <div id="infographic-canvas" class="bg-white rounded-2xl shadow-xl border border-slate-200/80 p-4 sm:p-7 transition-all duration-300">
+
+      <!-- HEADER BANNER -->
+      <header class="print-compact-header relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#0b2239] via-[#133b63] to-[#0f4c5c] text-white p-5 sm:p-6 mb-5 shadow-md">
+        <!-- Decorative SVG pattern in background -->
+        <svg class="absolute right-0 top-0 h-full w-64 opacity-10 pointer-events-none" viewBox="0 0 200 200" fill="none">
+          <circle cx="160" cy="40" r="80" stroke="white" stroke-width="16"/>
+          <circle cx="180" cy="160" r="60" stroke="white" stroke-width="12"/>
+          <path d="M100 0 L200 100 L100 200" stroke="white" stroke-width="8"/>
+        </svg>
+
+        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="space-y-1.5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm text-amber-300 text-xs font-heading font-semibold tracking-wide">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span>สภาคริสตจักรในประเทศไทย และมูลนิธิแห่งสภาคริสตจักรในประเทศไทย</span>
+            </div>
+            <h1 class="print-compact-title font-heading font-extrabold text-xl sm:text-2xl lg:text-3xl tracking-tight text-white">
+              หลักเกณฑ์การจัดซื้อจัดจ้างฯ ค.ศ. 2016 <span class="text-amber-300 font-semibold">(และแก้ไขเพิ่มเติม ค.ศ. 2024)</span>
+            </h1>
+            <p class="print-compact-subtitle text-blue-100 text-sm sm:text-base font-medium flex flex-wrap items-center gap-2">
+              <span>สำหรับหน่วยงานสถาบันขนาดใหญ่ :</span>
+              <span class="bg-white text-[#0b2239] font-heading font-bold px-2.5 py-0.5 rounded-md text-xs sm:text-sm shadow-sm">
+                โรงพยาบาลกรุงเทพคริสเตียน (Bangkok Christian Hospital)
+              </span>
+            </p>
+          </div>
+
+          <!-- Summary Authority Legend Box -->
+          <div class="bg-slate-900/45 backdrop-blur-md border border-white/15 rounded-xl p-3 shrink-0 text-xs space-y-1.5 md:w-72">
+            <div class="font-heading font-bold text-amber-300 uppercase tracking-wider text-[11px] flex items-center gap-1.5 border-b border-white/10 pb-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <span>สรุปกรอบอำนาจอนุมัติ 3 ระดับ (ข้อ 14)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-slate-200">• ไม่เกิน 400,000 บาท:</span>
+              <span class="font-heading font-semibold text-sky-300">ผจก. ร่วมกับ ผอ.</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-slate-200">• ไม่เกิน 3,000,000 บาท:</span>
+              <span class="font-heading font-semibold text-emerald-300">กก.อำนวยการ รพ.</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-slate-200">• เกินกว่า 3,000,000 บาท:</span>
+              <span class="font-heading font-semibold text-amber-300">กก.ดำเนินงานสภาฯ + มูลนิธิฯ</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ==================== MAIN 2-COLUMN GRID: PART 1 (BUY) & PART 2 (HIRE) ==================== -->
+      <div class="print-grid-2col grid grid-cols-1 lg:grid-cols-2 gap-5">
+
+        <!-- COLUMN 1: ส่วนที่ 1 การจัดซื้อ -->
+        <section class="rounded-2xl bg-gradient-to-b from-blue-50/90 to-slate-50 border border-blue-200/80 p-4 shadow-sm flex flex-col justify-between">
+          <div>
+            <!-- Section Header -->
+            <div class="flex items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-blue-600">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-blue-700 text-white flex items-center justify-center shadow-sm shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="font-heading font-bold text-base sm:text-lg text-blue-950 leading-tight">
+                    ส่วนที่ 1: การจัดซื้อ
+                  </h2>
+                  <p class="text-xs text-blue-700 font-medium">วัสดุ ครุภัณฑ์ เวชภัณฑ์ เครื่องมือแพทย์ ยานพาหนะ ที่ดิน ฯลฯ</p>
+                </div>
+              </div>
+              <span class="text-[11px] font-heading font-semibold px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 border border-blue-200">
+                ข้อ 5 - 9
+              </span>
+            </div>
+
+            <!-- 4 Budget Tiers for Procurement (Buy) -->
+            <div class="space-y-2.5">
+
+              <!-- Buy Tier 1: <= 50,000 -->
+              <article id="card-buy-1" class="print-card rounded-xl bg-white border-l-4 border-l-sky-500 border border-slate-200 p-3.5 shadow-sm hover:shadow-md transition">
+                <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-sky-100 text-sky-800 font-heading font-bold text-xs flex items-center justify-center">1</span>
+                    <h3 class="font-heading font-bold text-sm sm:text-base text-slate-900">วงเงินไม่เกิน 50,000 บาท</h3>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-sky-100 text-sky-800 border border-sky-200">
+                    วิธีตกลงราคา
+                  </span>
+                </div>
+                <div class="print-text-sm text-xs sm:text-sm text-slate-700 space-y-1 pl-1">
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-sky-600 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การเตรียมการ:</strong> ผู้ขอซื้อกรอกแบบฟอร์มขอซื้อ เจ้าหน้าที่พัสดุจัดทำรายละเอียดเหตุผลความจำเป็น และดำเนินการจัดซื้อจากผู้ขายโดยตรง</span>
+                  </p>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span class="text-slate-500 font-medium flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    ผู้อนุมัติ:
+                  </span>
+                  <span class="font-heading font-bold text-sky-800 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">
+                    ผู้จัดการร่วมกับผู้อำนวยการ
+                  </span>
+                </div>
+              </article>
+
+              <!-- Buy Tier 2: 50,001 - 400,000 -->
+              <article id="card-buy-2" class="print-card rounded-xl bg-white border-l-4 border-l-blue-500 border border-slate-200 p-3.5 shadow-sm hover:shadow-md transition">
+                <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-800 font-heading font-bold text-xs flex items-center justify-center">2</span>
+                    <h3 class="font-heading font-bold text-sm sm:text-base text-slate-900">วงเงิน 50,001 – 400,000 บาท</h3>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-blue-100 text-blue-800 border border-blue-200">
+                    วิธีสอบราคา
+                  </span>
+                </div>
+                <div class="print-text-sm text-xs sm:text-sm text-slate-700 space-y-1 pl-1">
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-blue-600 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การเตรียมการ:</strong> ติดต่อร้านค้าอย่างน้อย <strong>3 แห่ง</strong> เพื่อเปรียบเทียบราคา คุณภาพ เงื่อนไขบริการหลังการขาย และเชิญมาต่อรองราคา</span>
+                  </p>
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-blue-600 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การตั้งกรรมการ:</strong> แต่งตั้ง <strong>คณะกรรมการจัดซื้อ (ไม่เกิน 5 คน)</strong> และ <strong>กรรมการตรวจรับ (ไม่เกิน 5 คน)</strong> <em>(ต้องไม่เป็นบุคคลเดียวกัน)</em></span>
+                  </p>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span class="text-slate-500 font-medium flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    ผู้อนุมัติ:
+                  </span>
+                  <span class="font-heading font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                    ผู้จัดการร่วมกับผู้อำนวยการ
+                  </span>
+                </div>
+              </article>
+
+              <!-- Buy Tier 3: 400,001 - 3,000,000 -->
+              <article id="card-buy-3" class="print-card rounded-xl bg-white border-l-4 border-l-indigo-600 border border-slate-200 p-3.5 shadow-sm hover:shadow-md transition">
+                <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-800 font-heading font-bold text-xs flex items-center justify-center">3</span>
+                    <h3 class="font-heading font-bold text-sm sm:text-base text-slate-900">วงเงิน 400,001 – 3,000,000 บาท</h3>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-indigo-100 text-indigo-800 border border-indigo-200">
+                    วิธีสอบราคา
+                  </span>
+                </div>
+                <div class="print-text-sm text-xs sm:text-sm text-slate-700 space-y-1 pl-1">
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-indigo-600 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การเตรียมการ:</strong> ผจก. ร่วมกับ ผอ. ติดต่อและเทียบราคา/รูปแบบสินค้าจากร้านค้าอย่างน้อย <strong>3 แห่ง</strong> พร้อมเงื่อนไขติดตั้ง ทดลองระบบ และค่าบำรุงรักษาประจำปี</span>
+                  </p>
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-indigo-600 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การตั้งกรรมการ:</strong> แต่งตั้ง <strong>คณะกรรมการจัดซื้อ (ไม่เกิน 9 คน)</strong> และ <strong>กรรมการตรวจรับ (ไม่เกิน 7 คน)</strong></span>
+                  </p>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span class="text-slate-500 font-medium flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    ผู้อนุมัติ:
+                  </span>
+                  <span class="font-heading font-bold text-indigo-900 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">
+                    คณะกรรมการอำนวยการสถาบัน (กก.อำนวยการ รพ.)
+                  </span>
+                </div>
+              </article>
+
+              <!-- Buy Tier 4: > 3,000,000 -->
+              <article id="card-buy-4" class="print-card rounded-xl bg-white border-l-4 border-l-blue-900 border border-slate-200 p-3.5 shadow-sm hover:shadow-md transition">
+                <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-blue-950 text-amber-300 font-heading font-bold text-xs flex items-center justify-center">4</span>
+                    <h3 class="font-heading font-bold text-sm sm:text-base text-slate-900">วงเงินเกิน 3,000,000 บาท ขึ้นไป</h3>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-blue-950 text-amber-300">
+                    วิธีประกวดราคา
+                  </span>
+                </div>
+                <div class="print-text-sm text-xs sm:text-sm text-slate-700 space-y-1 pl-1">
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-blue-900 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การเตรียมการ:</strong> จัดทำคุณลักษณะเฉพาะพัสดุ <strong>(TOR)</strong> เสนอราคาร้านค้าอย่างน้อย <strong>3 แห่ง</strong> แจ้งประกวดราคา ผ่านความเห็นชอบของ กก.อำนวยการ รพ.</span>
+                  </p>
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-blue-900 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การตั้งกรรมการ 4 ชุด:</strong> (1) <strong>กก.จัดซื้อ</strong> ไม่เกิน 9 คน (2) <strong>กก.ตรวจรับ</strong> ไม่เกิน 7 คน (3) <strong>กก.รับซอง</strong> 3 คน และ (4) <strong>กก.เปิดซอง</strong> 3 คน</span>
+                  </p>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-1 text-xs">
+                  <span class="text-slate-500 font-medium flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    ผู้อนุมัติ:
+                  </span>
+                  <span class="font-heading font-bold text-blue-950 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-300">
+                    กก.ดำเนินงานสภาคริสตจักรฯ และ กก.มูลนิธิฯ
+                  </span>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Footnote for Buy Section -->
+          <div class="mt-3 pt-2.5 border-t border-blue-200/80 flex items-start gap-2 text-[11px] text-blue-900 bg-blue-100/50 rounded-lg p-2">
+            <svg class="w-4 h-4 text-blue-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div>
+              <strong>หมายเหตุเฉพาะ:</strong> กรณีซื้อ<strong>รถยนต์</strong> ต้องสอบราคาอย่างน้อย 3 แห่ง เสนอ กก.อำนวยการ รพ. เพื่อขออนุมัติต่อ กก.ดำเนินงานสภาฯ และ กก.มูลนิธิฯ ในนามมูลนิธิฯ / กรณีซื้อ<strong>ที่ดิน สิ่งปลูกสร้าง หรือกิจการ</strong> มูลค่าตั้งแต่ 10 ล้านบาทขึ้นไป ต้องทำ Feasibility Study และ Due Diligence
+            </div>
+          </div>
+        </section>
+
+        <!-- COLUMN 2: ส่วนที่ 2 การจัดจ้าง -->
+        <section class="rounded-2xl bg-gradient-to-b from-teal-50/90 to-slate-50 border border-teal-200/80 p-4 shadow-sm flex flex-col justify-between">
+          <div>
+            <!-- Section Header -->
+            <div class="flex items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-teal-600">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-teal-700 text-white flex items-center justify-center shadow-sm shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="font-heading font-bold text-base sm:text-lg text-teal-950 leading-tight">
+                    ส่วนที่ 2: การจัดจ้าง
+                  </h2>
+                  <p class="text-xs text-teal-700 font-medium">รับเหมา ก่อสร้าง ปรับปรุง จ้างเหมาบริการ จ้างที่ปรึกษา ออกแบบ</p>
+                </div>
+              </div>
+              <span class="text-[11px] font-heading font-semibold px-2.5 py-1 rounded-full bg-teal-100 text-teal-800 border border-teal-200">
+                ข้อ 10 - 13
+              </span>
+            </div>
+
+            <!-- 4 Budget Tiers for Hiring/Contracting -->
+            <div class="space-y-2.5">
+
+              <!-- Hire Tier 1: <= 50,000 -->
+              <article id="card-hire-1" class="print-card rounded-xl bg-white border-l-4 border-l-teal-400 border border-slate-200 p-3.5 shadow-sm hover:shadow-md transition">
+                <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-teal-100 text-teal-800 font-heading font-bold text-xs flex items-center justify-center">1</span>
+                    <h3 class="font-heading font-bold text-sm sm:text-base text-slate-900">วงเงินไม่เกิน 50,000 บาท</h3>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-teal-100 text-teal-800 border border-teal-200">
+                    วิธีตกลงราคา
+                  </span>
+                </div>
+                <div class="print-text-sm text-xs sm:text-sm text-slate-700 space-y-1 pl-1">
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-teal-600 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การเตรียมการ:</strong> ผู้ขอจ้างกรอกแบบฟอร์มขอจ้างทำรายละเอียด เจ้าหน้าที่พัสดุดำเนินการจัดจ้างผู้รับจ้างโดยตรงตามที่ได้รับอนุมัติ</span>
+                  </p>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span class="text-slate-500 font-medium flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    ผู้อนุมัติ:
+                  </span>
+                  <span class="font-heading font-bold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-200">
+                    ผู้จัดการร่วมกับผู้อำนวยการ
+                  </span>
+                </div>
+              </article>
+
+              <!-- Hire Tier 2: 50,001 - 400,000 -->
+              <article id="card-hire-2" class="print-card rounded-xl bg-white border-l-4 border-l-emerald-500 border border-slate-200 p-3.5 shadow-sm hover:shadow-md transition">
+                <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 font-heading font-bold text-xs flex items-center justify-center">2</span>
+                    <h3 class="font-heading font-bold text-sm sm:text-base text-slate-900">วงเงิน 50,001 – 400,000 บาท</h3>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                    วิธีสอบราคา
+                  </span>
+                </div>
+                <div class="print-text-sm text-xs sm:text-sm text-slate-700 space-y-1 pl-1">
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-emerald-600 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การเตรียมการ:</strong> สอบทานราคาจากผู้รับจ้างอย่างน้อย <strong>3 แห่ง</strong> (หากเป็นการก่อสร้างต้องมี<strong>แบบแปลนและ BOQ</strong>)</span>
+                  </p>
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-emerald-600 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การตั้งกรรมการ:</strong> แต่งตั้ง <strong>คณะกรรมการจัดจ้าง (ไม่เกิน 5 คน)</strong> และ <strong>กรรมการตรวจรับ (ไม่เกิน 5 คน)</strong></span>
+                  </p>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span class="text-slate-500 font-medium flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    ผู้อนุมัติ:
+                  </span>
+                  <span class="font-heading font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                    ผู้จัดการร่วมกับผู้อำนวยการ
+                  </span>
+                </div>
+              </article>
+
+              <!-- Hire Tier 3: 400,001 - 3,000,000 -->
+              <article id="card-hire-3" class="print-card rounded-xl bg-white border-l-4 border-l-teal-700 border border-slate-200 p-3.5 shadow-sm hover:shadow-md transition">
+                <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-teal-100 text-teal-900 font-heading font-bold text-xs flex items-center justify-center">3</span>
+                    <h3 class="font-heading font-bold text-sm sm:text-base text-slate-900">วงเงิน 400,001 – 3,000,000 บาท</h3>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-teal-100 text-teal-900 border border-teal-300">
+                    วิธีสอบราคา
+                  </span>
+                </div>
+                <div class="print-text-sm text-xs sm:text-sm text-slate-700 space-y-1 pl-1">
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-teal-700 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การเตรียมการ:</strong> นำเสนอรูปแบบ แบบแปลน <strong>BOQ</strong> และงบประมาณก่อสร้าง เทียบราคาผู้รับจ้างอย่างน้อย <strong>3 แห่ง</strong></span>
+                  </p>
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-teal-700 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การตั้งกรรมการ 4 ชุด:</strong> แต่งตั้ง <strong>กก.จัดจ้าง (ไม่เกิน 9 คน)</strong>, <strong>ตรวจรับ (ไม่เกิน 7 คน)</strong>, <strong>รับซอง (3 คน)</strong> และ <strong>เปิดซอง (3 คน)</strong></span>
+                  </p>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span class="text-slate-500 font-medium flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    ผู้อนุมัติ:
+                  </span>
+                  <span class="font-heading font-bold text-teal-950 bg-teal-50 px-2 py-0.5 rounded border border-teal-300">
+                    คณะกรรมการอำนวยการสถาบัน (กก.อำนวยการ รพ.)
+                  </span>
+                </div>
+              </article>
+
+              <!-- Hire Tier 4: > 3,000,000 -->
+              <article id="card-hire-4" class="print-card rounded-xl bg-white border-l-4 border-l-emerald-950 border border-slate-200 p-3.5 shadow-sm hover:shadow-md transition">
+                <div class="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-emerald-950 text-amber-300 font-heading font-bold text-xs flex items-center justify-center">4</span>
+                    <h3 class="font-heading font-bold text-sm sm:text-base text-slate-900">วงเงินเกิน 3,000,000 บาท ขึ้นไป</h3>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-emerald-950 text-amber-300">
+                    วิธีประกวดราคา
+                  </span>
+                </div>
+                <div class="print-text-sm text-xs sm:text-sm text-slate-700 space-y-1 pl-1">
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-emerald-900 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การเตรียมการ:</strong> นำเสนอแบบแปลน งานโครงสร้าง สถาปัตย์ ระบบต่างๆ และ <strong>BOQ ที่รับรองโดยวิศวกร</strong> ประกาศประกวดราคา</span>
+                  </p>
+                  <p class="flex items-start gap-1.5">
+                    <span class="text-emerald-900 font-bold mt-0.5">•</span>
+                    <span><strong class="text-slate-900">การตั้งกรรมการ 4 ชุด:</strong> แต่งตั้งคณะกรรมการ <strong>จัดจ้าง (ไม่เกิน 9 คน)</strong>, <strong>ตรวจรับ (ไม่เกิน 7 คน)</strong>, <strong>รับซอง (3 คน)</strong> และ <strong>เปิดซอง (3 คน)</strong></span>
+                  </p>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-1 text-xs">
+                  <span class="text-slate-500 font-medium flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5 text-emerald-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    ผู้อนุมัติ:
+                  </span>
+                  <span class="font-heading font-bold text-emerald-950 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-300">
+                    กก.ดำเนินงานสภาคริสตจักรฯ และ กก.มูลนิธิฯ
+                  </span>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Footnote for Hire Section -->
+          <div class="mt-3 pt-2.5 border-t border-teal-200/80 flex items-start gap-2 text-[11px] text-teal-900 bg-teal-100/50 rounded-lg p-2">
+            <svg class="w-4 h-4 text-teal-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+            <div>
+              <strong>การชำระเงินก่อสร้าง & ประกันผลงาน:</strong> หักภาษี ณ ที่จ่าย <strong>3%</strong> (ก่อน VAT) นำส่งสรรพากรภายในวันที่ 7 ของทุกเดือน และหักเงินประกันความเสียหาย <strong>5%</strong> ของงวดงาน (คืนเมื่อครบกำหนดสัญญาแต่ไม่น้อยกว่า 1 ปี นับจากงวดสุดท้าย)
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ==================== PART 3: FEASIBILITY STUDY (2024 UPDATE) ==================== -->
+      <section class="print-section-gap mt-5 rounded-2xl bg-gradient-to-r from-amber-50 via-orange-50/70 to-amber-50 border border-amber-300/90 p-4 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-amber-500">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-sm shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <h2 class="font-heading font-bold text-base sm:text-lg text-amber-950 leading-tight">
+                  ส่วนที่ 3: เงื่อนไขเพิ่มเติมเฉพาะงานจัดจ้างก่อสร้างหรือปรับปรุง (Feasibility Study)
+                </h2>
+                <span class="px-2 py-0.5 rounded-md bg-rose-600 text-white font-heading font-bold text-[10px] tracking-wide uppercase">
+                  อัปเดตมติ ส.-ด. 708/2024 (8 ส.ค. 2024)
+                </span>
+              </div>
+              <p class="text-xs text-amber-800 font-medium">หลักเกณฑ์ข้อ 11.4.1 การจัดจ้างเพื่อทำการศึกษาความเป็นไปได้ของโครงการ ตามระดับมูลค่าโครงการก่อสร้างหรือปรับปรุงรวมกัน</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Feasibility Tiers Grid -->
+        <div class="print-grid-4col grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          
+          <!-- FS Tier 1: <= 3M -->
+          <div id="card-fs-1" class="print-card rounded-xl bg-white border-t-4 border-t-amber-400 border border-amber-200 p-3 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-1 mb-1.5">
+                <span class="text-[11px] font-heading font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">ข้อ 11.4.1 ก.</span>
+                <span class="text-[11px] text-slate-400 font-heading">ระดับที่ 1</span>
+              </div>
+              <h3 class="font-heading font-bold text-sm text-slate-900 mb-1.5">
+                มูลค่าไม่เกิน 3,000,000 บาท
+              </h3>
+              <p class="print-text-xs text-xs text-slate-700 leading-relaxed">
+                การศึกษาความเป็นไปได้ของโครงการ (Feasibility Study) <strong>ให้อยู่ในดุลพินิจ</strong>ของคณะกรรมการอำนวยการสถาบัน (คณะกรรมการอำนวยการโรงพยาบาล)
+              </p>
+            </div>
+            <div class="mt-2.5 pt-2 border-t border-amber-100 text-[11px]">
+              <span class="text-slate-500 block">ผู้อนุมัติ:</span>
+              <span class="font-heading font-bold text-amber-900">คณะกรรมการอำนวยการ รพ.</span>
+            </div>
+          </div>
+
+          <!-- FS Tier 2: 3M - 50M -->
+          <div id="card-fs-2" class="print-card rounded-xl bg-white border-t-4 border-t-amber-500 border border-amber-200 p-3 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-1 mb-1.5">
+                <span class="text-[11px] font-heading font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-900">ข้อ 11.4.1 ข.</span>
+                <span class="text-[11px] text-slate-400 font-heading">ระดับที่ 2</span>
+              </div>
+              <h3 class="font-heading font-bold text-sm text-slate-900 mb-1.5">
+                มูลค่า 3,000,000 – 50,000,000 บาท
+              </h3>
+              <p class="print-text-xs text-xs text-slate-700 leading-relaxed">
+                <strong>ต้องมี</strong>การศึกษาความเป็นไปได้ของโครงการ (Feasibility Study) รวมถึงการศึกษา<strong>ด้านการเงิน ผลตอบแทน ประมาณการทางการเงิน และด้านการตลาด</strong>
+              </p>
+            </div>
+            <div class="mt-2.5 pt-2 border-t border-amber-100 text-[11px]">
+              <span class="text-slate-500 block">ผู้อนุมัติ (ผ่าน กก.อำนวยการ รพ.):</span>
+              <span class="font-heading font-bold text-amber-900">กก.ดำเนินงานสภาฯ และ กก.มูลนิธิฯ</span>
+            </div>
+          </div>
+
+          <!-- FS Tier 3: 50M - 200M (Updated 2024) -->
+          <div id="card-fs-3" class="print-card rounded-xl bg-white border-t-4 border-t-orange-600 border border-amber-200 p-3 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-1 mb-1.5">
+                <span class="text-[11px] font-heading font-bold px-2 py-0.5 rounded bg-orange-100 text-orange-900">ข้อ 11.4.1 ค. (แก้ไข 2024)</span>
+                <span class="text-[11px] text-orange-600 font-heading font-semibold">ระดับที่ 3</span>
+              </div>
+              <h3 class="font-heading font-bold text-sm text-slate-900 mb-1.5">
+                มูลค่า 50,000,000 – 200,000,000 บาท
+              </h3>
+              <p class="print-text-xs text-xs text-slate-700 leading-relaxed">
+                <strong>ต้องทำการศึกษา Feasibility Study</strong> ด้านการเงิน ผลตอบแทน ประมาณการทางการเงิน และด้านการตลาด <strong>โดยผู้ชำนาญการที่มีความเป็นอิสระและมีผลงานเป็นที่ประจักษ์</strong>
+              </p>
+            </div>
+            <div class="mt-2.5 pt-2 border-t border-amber-100 text-[11px]">
+              <span class="text-slate-500 block">ผู้อนุมัติ (ผ่าน กก.อำนวยการ รพ.):</span>
+              <span class="font-heading font-bold text-orange-900">กก.ดำเนินงานสภาฯ และ กก.มูลนิธิฯ</span>
+            </div>
+          </div>
+
+          <!-- FS Tier 4: >= 200M (Added 2024) -->
+          <div id="card-fs-4" class="print-card rounded-xl bg-white border-t-4 border-t-rose-600 border border-rose-200 p-3 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-1 mb-1.5">
+                <span class="text-[11px] font-heading font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-900">ข้อ 11.4.1 ง. (เพิ่ม 2024)</span>
+                <span class="text-[11px] text-rose-600 font-heading font-semibold">ระดับที่ 4</span>
+              </div>
+              <h3 class="font-heading font-bold text-sm text-slate-900 mb-1.5">
+                มูลค่า 200,000,000 บาทขึ้นไป
+              </h3>
+              <p class="print-text-xs text-xs text-slate-700 leading-relaxed">
+                <strong>ต้องทำการศึกษา Feasibility Study</strong> โดย<strong>ผู้ชำนาญการที่ได้รับความเห็นชอบเป็นผู้ประเมิน / บริษัทประเมินมูลค่าทรัพย์สินจาก ก.ล.ต.</strong> หรือสถาบันที่<strong>หน่วยงานราชการให้การยอมรับ</strong>
+              </p>
+            </div>
+            <div class="mt-2.5 pt-2 border-t border-rose-100 text-[11px]">
+              <span class="text-slate-500 block">ผู้อนุมัติ (ผ่าน กก.อำนวยการ รพ.):</span>
+              <span class="font-heading font-bold text-rose-900">กก.ดำเนินงานสภาฯ และ กก.มูลนิธิฯ</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== PART 4: SPECIAL METHOD (การดำเนินการโดยวิธีพิเศษ) ==================== -->
+      <section class="print-section-gap mt-5 rounded-2xl bg-gradient-to-r from-purple-50 via-fuchsia-50/50 to-rose-50 border border-purple-200/90 p-4 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-purple-600">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-purple-700 text-white flex items-center justify-center shadow-sm shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="font-heading font-bold text-base sm:text-lg text-purple-950 leading-tight">
+                ส่วนที่ 4: การดำเนินการโดยวิธีพิเศษ <span class="text-xs sm:text-sm font-normal text-purple-800">(ใช้ในกรณีที่ไม่อาจใช้วิธีปกติได้)</span>
+              </h2>
+              <p class="text-xs text-purple-700 font-medium">หลักเกณฑ์ข้อ 9.4 (การจัดซื้อโดยวิธีพิเศษ) และ ข้อ 13.3 (การจัดจ้างโดยวิธีพิเศษ)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="print-grid-2col grid grid-cols-1 lg:grid-cols-2 gap-4">
+          
+          <!-- Special Buy -->
+          <div class="print-card rounded-xl bg-white border border-purple-200 p-3.5 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-heading font-bold text-sm sm:text-base text-purple-950 flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span>
+                  <span>การจัดซื้อโดยวิธีพิเศษ (ข้อ 9.4)</span>
+                </h3>
+                <span class="text-[11px] font-heading font-semibold px-2 py-0.5 rounded bg-purple-100 text-purple-800">4 เงื่อนไข</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-700 mb-2.5">
+                <div class="bg-purple-50/70 rounded-lg p-2 border border-purple-100">
+                  <strong class="text-purple-900 font-heading">(1) ขายเฉพาะแห่ง:</strong> เป็นสิ่งของที่มีจำหน่ายเฉพาะแห่งเท่านั้น
+                </div>
+                <div class="bg-purple-50/70 rounded-lg p-2 border border-purple-100">
+                  <strong class="text-purple-900 font-heading">(2) ขายทอดตลาด:</strong> เป็นสิ่งของจากการขายทอดตลาด
+                </div>
+                <div class="bg-purple-50/70 rounded-lg p-2 border border-purple-100">
+                  <strong class="text-purple-900 font-heading">(3) เร่งด่วนเป็นพิเศษ:</strong> ไม่อาจคาดการณ์ หรือหลีกเลี่ยงไม่ได้
+                </div>
+                <div class="bg-purple-50/70 rounded-lg p-2 border border-purple-100">
+                  <strong class="text-purple-900 font-heading">(4) ใช้วิธีปกติไม่ได้:</strong> ไม่อาจใช้วิธีตกลงราคา สอบราคา หรือประกวดราคาได้
+                </div>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-slate-100 text-xs text-slate-700 flex items-start gap-1.5">
+              <span class="font-heading font-bold text-purple-800 shrink-0">การดำเนินการ:</span>
+              <span>เจ้าหน้าที่รายงานลักษณะพัสดุชัดเจน (หากเคยซื้อให้แจ้งราคาเดิมเทียบเคียง) เพื่อขออนุญาตต่อ<strong>ผู้มีอำนาจสั่งซื้อตามระดับวงเงิน</strong></span>
+            </div>
+          </div>
+
+          <!-- Special Hire -->
+          <div class="print-card rounded-xl bg-white border border-rose-200 p-3.5 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-heading font-bold text-sm sm:text-base text-rose-950 flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+                  <span>การจัดจ้างโดยวิธีพิเศษ (ข้อ 13.3)</span>
+                </h3>
+                <span class="text-[11px] font-heading font-semibold px-2 py-0.5 rounded bg-rose-100 text-rose-800">3 เงื่อนไข</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-1.5 text-xs text-slate-700 mb-2.5">
+                <div class="bg-rose-50/70 rounded-lg p-2 border border-rose-100">
+                  <strong class="text-rose-900 font-heading block">(1) ช่างฝีมือเฉพาะทาง:</strong> ต้องการผู้มีความชำนาญและประสบการณ์พิเศษ
+                </div>
+                <div class="bg-rose-50/70 rounded-lg p-2 border border-rose-100">
+                  <strong class="text-rose-900 font-heading block">(2) มีผู้ชำนาญน้อยราย:</strong> มีผู้ประกอบกิจการหรือผู้เชี่ยวชาญน้อยราย
+                </div>
+                <div class="bg-rose-50/70 rounded-lg p-2 border border-rose-100">
+                  <strong class="text-rose-900 font-heading block">(3) เร่งด่วนเป็นพิเศษ:</strong> หากใช้วิธีปกติจะล่าช้าและเกิดความเสียหายต่อองค์กร
+                </div>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-slate-100 text-xs text-slate-700 flex items-start gap-1.5">
+              <span class="font-heading font-bold text-rose-800 shrink-0">การดำเนินการ:</span>
+              <span>ชี้แจงเหตุผลความจำเป็นและลักษณะงานโดยละเอียด เมื่อผู้มีอำนาจสั่งจ้างอนุมัติให้ใช้วิธีพิเศษแล้ว ให้<strong>ตั้งคณะกรรมการเจรจาตกลงกับผู้รับจ้าง</strong>และนำเสนอผู้มีอำนาจสั่งจ้างอนุมัติตามขั้นตอน</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-4 pt-3 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+          <span>อ้างอิง: หลักเกณฑ์การจัดซื้อจัดจ้างฯ ค.ศ. 2016 (มีผล 7 มิ.ย. 2016) และมติแก้ไขเพิ่มเติม ส.-ด. 708/2024 (มีผล 8 ส.ค. 2024)</span>
+        </div>
+        <div class="font-heading text-slate-600 font-medium">
+          สรุปสำหรับ: โรงพยาบาลกรุงเทพคริสเตียน (หน่วยงานสถาบันขนาดใหญ่)
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- ==================== VIEW 2: COMPARISON MATRIX TABLE (Hidden by default) ==================== -->
+    <div id="table-view-container" class="hidden no-print bg-white rounded-2xl shadow-xl border border-slate-200 p-5 sm:p-7">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-5 pb-3 border-b border-slate-200">
+        <div>
+          <h2 class="font-heading font-bold text-lg sm:text-xl text-slate-900">ตารางเปรียบเทียบการจัดซื้อ vs การจัดจ้าง (สถาบันขนาดใหญ่)</h2>
+          <p class="text-xs sm:text-sm text-slate-500">เปรียบเทียบขั้นตอน เอกสาร คณะกรรมการ และผู้มีอำนาจอนุมัติในแต่ละช่วงวงเงิน</p>
+        </div>
+        <button onclick="switchView('poster')" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-heading font-medium transition">
+          ← กลับสู่มุมมองอินโฟกราฟิก
+        </button>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="bg-slate-900 text-white font-heading">
+              <th class="p-3 rounded-tl-xl w-1/6">ระดับวงเงิน / วิธี</th>
+              <th class="p-3 bg-blue-900 w-2/6">ส่วนที่ 1: การจัดซื้อ (วัสดุ ครุภัณฑ์ ที่ดิน ฯลฯ)</th>
+              <th class="p-3 bg-teal-900 w-2/6">ส่วนที่ 2: การจัดจ้าง (รับเหมา ก่อสร้าง บริการ)</th>
+              <th class="p-3 rounded-tr-xl w-1/6">ผู้มีอำนาจอนุมัติ</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-heading font-bold text-slate-900">
+                ไม่เกิน 50,000 บาท
+                <span class="block text-xs font-normal text-sky-700 mt-0.5">วิธีตกลงราคา</span>
+              </td>
+              <td class="p-3 text-slate-700">
+                เจ้าหน้าที่พัสดุจัดทำรายละเอียดเหตุผลความจำเป็น และดำเนินการจัดซื้อจากผู้ขายโดยตรง
+              </td>
+              <td class="p-3 text-slate-700">
+                ผู้ขอจ้างทำรายละเอียด เจ้าหน้าที่พัสดุดำเนินการจัดจ้างผู้รับจ้างโดยตรงตามที่ได้รับอนุมัติ
+              </td>
+              <td class="p-3 font-heading font-semibold text-sky-800 bg-sky-50/50">
+                ผู้จัดการร่วมกับผู้อำนวยการ
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-heading font-bold text-slate-900">
+                50,001 – 400,000 บาท
+                <span class="block text-xs font-normal text-blue-700 mt-0.5">วิธีสอบราคา</span>
+              </td>
+              <td class="p-3 text-slate-700">
+                • เทียบราคาร้านค้าอย่างน้อย <strong>3 แห่ง</strong><br>
+                • ตั้ง <strong>กก.จัดซื้อ (ไม่เกิน 5 คน)</strong><br>
+                • ตั้ง <strong>กก.ตรวจรับ (ไม่เกิน 5 คน)</strong>
+              </td>
+              <td class="p-3 text-slate-700">
+                • สอบทานราคาผู้รับจ้างอย่างน้อย <strong>3 แห่ง</strong> (งานก่อสร้างเกิน 2 แสนต้องมีแบบแปลนและ BOQ)<br>
+                • ตั้ง <strong>กก.จัดจ้าง (ไม่เกิน 5 คน)</strong> และ <strong>กก.ตรวจรับ (ไม่เกิน 5 คน)</strong>
+              </td>
+              <td class="p-3 font-heading font-semibold text-blue-800 bg-blue-50/50">
+                ผู้จัดการร่วมกับผู้อำนวยการ
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-heading font-bold text-slate-900">
+                400,001 – 3,000,000 บาท
+                <span class="block text-xs font-normal text-indigo-700 mt-0.5">วิธีสอบราคา</span>
+              </td>
+              <td class="p-3 text-slate-700">
+                • เทียบราคาและรูปแบบสินค้าจากร้านค้าอย่างน้อย <strong>3 แห่ง</strong><br>
+                • ตั้ง <strong>กก.จัดซื้อ (ไม่เกิน 9 คน)</strong><br>
+                • ตั้ง <strong>กก.ตรวจรับ (ไม่เกิน 7 คน)</strong>
+              </td>
+              <td class="p-3 text-slate-700">
+                • นำเสนอแบบแปลน BOQ และงบประมาณ เทียบราคาอย่างน้อย <strong>3 แห่ง</strong><br>
+                • ตั้งกรรมการ 4 ชุด: <strong>จัดจ้าง (ไม่เกิน 9 คน), ตรวจรับ (ไม่เกิน 7 คน), รับซอง (3 คน), เปิดซอง (3 คน)</strong>
+              </td>
+              <td class="p-3 font-heading font-semibold text-indigo-900 bg-indigo-50/50">
+                คณะกรรมการอำนวยการสถาบัน (กก.อำนวยการ รพ.)
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-heading font-bold text-slate-900">
+                เกิน 3,000,000 บาทขึ้นไป
+                <span class="block text-xs font-normal text-amber-700 mt-0.5">วิธีประกวดราคา</span>
+              </td>
+              <td class="p-3 text-slate-700">
+                • จัดทำคุณลักษณะพัสดุ <strong>(TOR)</strong> เสนอราคาร้านค้า <strong>3 แห่ง</strong> แจ้งประกวดราคา<br>
+                • ตั้งกรรมการ 4 ชุด: <strong>จัดซื้อ (ไม่เกิน 9 คน), ตรวจรับ (ไม่เกิน 7 คน), รับซอง (3 คน), เปิดซอง (3 คน)</strong>
+              </td>
+              <td class="p-3 text-slate-700">
+                • นำเสนอแบบแปลน โครงสร้าง สถาปัตย์ ระบบต่างๆ และ <strong>BOQ ที่รับรองโดยวิศวกร</strong> ประกาศประกวดราคา<br>
+                • ตั้งกรรมการ 4 ชุด: <strong>จัดจ้าง (ไม่เกิน 9 คน), ตรวจรับ (ไม่เกิน 7 คน), รับซอง (3 คน), เปิดซอง (3 คน)</strong>
+              </td>
+              <td class="p-3 font-heading font-semibold text-amber-900 bg-amber-50/70">
+                กก.ดำเนินงานสภาคริสตจักรฯ และ กก.มูลนิธิฯ
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Switch between Poster View, A4 Preview Mode, and Comparison Table View
+    function switchView(mode) {
+      const canvas = document.getElementById('infographic-canvas');
+      const tableContainer = document.getElementById('table-view-container');
+      const btnPoster = document.getElementById('btn-view-poster');
+      const btnA4 = document.getElementById('btn-view-a4');
+      const btnTable = document.getElementById('btn-view-table');
+
+      // Reset button styles
+      [btnPoster, btnA4, btnTable].forEach(btn => {
+        btn.className = 'px-2.5 py-1.5 rounded-md text-xs font-heading font-medium text-slate-300 hover:text-white transition';
+      });
+
+      if (mode === 'poster') {
+        canvas.classList.remove('hidden', 'a4-preview-mode');
+        tableContainer.classList.add('hidden');
+        btnPoster.className = 'px-2.5 py-1.5 rounded-md text-xs font-heading font-medium bg-blue-600 text-white shadow transition';
+      } else if (mode === 'a4') {
+        canvas.classList.remove('hidden');
+        canvas.classList.add('a4-preview-mode');
+        tableContainer.classList.add('hidden');
+        btnA4.className = 'px-2.5 py-1.5 rounded-md text-xs font-heading font-medium bg-blue-600 text-white shadow transition';
+      } else if (mode === 'table') {
+        canvas.classList.add('hidden');
+        tableContainer.classList.remove('hidden');
+        btnTable.className = 'px-2.5 py-1.5 rounded-md text-xs font-heading font-medium bg-blue-600 text-white shadow transition';
+      }
+    }
+
+    // Toggle Interactive Calculator Drawer
+    function toggleCalculator() {
+      const drawer = document.getElementById('calculator-drawer');
+      drawer.classList.toggle('hidden');
+      if (!drawer.classList.contains('hidden')) {
+        runBudgetCheck();
+      } else {
+        clearHighlights();
+      }
+    }
+
+    // Set preset amount and run check
+    function setQuickAmount(val) {
+      document.getElementById('calc-amount').value = val;
+      runBudgetCheck();
+    }
+
+    // Clear all card highlights
+    function clearHighlights() {
+      document.querySelectorAll('.tier-highlight').forEach(el => {
+        el.classList.remove('tier-highlight');
+      });
+    }
+
+    // Run Budget Check & Highlight corresponding cards
+    function runBudgetCheck() {
+      clearHighlights();
+
+      const type = document.getElementById('calc-type').value;
+      const rawAmount = parseFloat(document.getElementById('calc-amount').value) || 0;
+
+      const badgeEl = document.getElementById('calc-badge-method');
+      const titleEl = document.getElementById('calc-title');
+      const prepEl = document.getElementById('calc-prep');
+      const approverEl = document.getElementById('calc-approver');
+
+      const formattedAmount = rawAmount.toLocaleString('th-TH');
+
+      let tierIndex = 1;
+      let methodText = '';
+      let rangeText = '';
+      let prepText = '';
+      let approverText = '';
+
+      if (rawAmount <= 50000) {
+        tierIndex = 1;
+        methodText = 'วิธีตกลงราคา';
+        rangeText = `วงเงิน ${formattedAmount} บาท (ไม่เกิน 50,000 บาท)`;
+        approverText = 'ผู้จัดการร่วมกับผู้อำนวยการ';
+        prepText = type === 'buy'
+          ? 'การเตรียมการ: เจ้าหน้าที่พัสดุจัดทำรายละเอียดเหตุผลความจำเป็นและจัดซื้อจากผู้ขายโดยตรง'
+          : 'การเตรียมการ: ผู้ขอจ้างทำรายละเอียด เจ้าหน้าที่พัสดุจัดจ้างผู้รับจ้างโดยตรงตามที่ได้รับอนุมัติ';
+      } else if (rawAmount <= 400000) {
+        tierIndex = 2;
+        methodText = 'วิธีสอบราคา';
+        rangeText = `วงเงิน ${formattedAmount} บาท (50,001 - 400,000 บาท)`;
+        approverText = 'ผู้จัดการร่วมกับผู้อำนวยการ';
+        prepText = type === 'buy'
+          ? 'การเตรียมการ: เทียบราคาร้านค้าอย่างน้อย 3 แห่ง + ตั้ง กก.จัดซื้อ (ไม่เกิน 5 คน) และ กก.ตรวจรับ (ไม่เกิน 5 คน)'
+          : 'การเตรียมการ: สอบทานราคาผู้รับจ้างอย่างน้อย 3 แห่ง (ก่อสร้างเกิน 2 แสนต้องมีแบบแปลน/BOQ) + ตั้ง กก.จัดจ้างและตรวจรับ (ชุดละไม่เกิน 5 คน)';
+      } else if (rawAmount <= 3000000) {
+        tierIndex = 3;
+        methodText = 'วิธีสอบราคา';
+        rangeText = `วงเงิน ${formattedAmount} บาท (400,001 - 3,000,000 บาท)`;
+        approverText = 'คณะกรรมการอำนวยการสถาบัน (กก.อำนวยการ รพ.)';
+        prepText = type === 'buy'
+          ? 'การเตรียมการ: เทียบราคาและรูปแบบสินค้าอย่างน้อย 3 แห่ง + ตั้ง กก.จัดซื้อ (ไม่เกิน 9 คน) และ กก.ตรวจรับ (ไม่เกิน 7 คน)'
+          : 'การเตรียมการ: เสนอแบบแปลน BOQ เทียบราคา 3 แห่ง + ตั้ง กก.จัดจ้าง (ไม่เกิน 9 คน), ตรวจรับ (ไม่เกิน 7 คน), รับซอง (3 คน), เปิดซอง (3 คน)';
+      } else {
+        tierIndex = 4;
+        methodText = 'วิธีประกวดราคา';
+        rangeText = `วงเงิน ${formattedAmount} บาท (เกิน 3,000,000 บาทขึ้นไป)`;
+        approverText = 'กก.ดำเนินงานสภาคริสตจักรฯ และ กก.มูลนิธิฯ';
+        prepText = type === 'buy'
+          ? 'การเตรียมการ: จัดทำ TOR เทียบราคา 3 แห่ง แจ้งประกวดราคา + ตั้งกรรมการ 4 ชุด (จัดซื้อ 9, ตรวจรับ 7, รับซอง 3, เปิดซอง 3)'
+          : 'การเตรียมการ: เสนอแบบแปลนและ BOQ รับรองโดยวิศวกร ประกาศประกวดราคา + ตั้งกรรมการ 4 ชุด (จัดจ้าง 9, ตรวจรับ 7, รับซอง 3, เปิดซอง 3)';
+      }
+
+      // Highlight primary card
+      const prefix = type === 'buy' ? 'buy' : 'hire';
+      const targetCard = document.getElementById(`card-${prefix}-${tierIndex}`);
+      if (targetCard) {
+        targetCard.classList.add('tier-highlight');
+      }
+
+      // If construction, also check & highlight Feasibility Study card
+      if (type === 'construct') {
+        let fsIndex = 1;
+        let fsNote = '';
+        if (rawAmount <= 3000000) {
+          fsIndex = 1;
+          fsNote = ' | Feasibility Study: อยู่ในดุลพินิจของ กก.อำนวยการ รพ.';
+        } else if (rawAmount <= 50000000) {
+          fsIndex = 2;
+          fsNote = ' | ต้องทำ Feasibility Study (การเงิน/ผลตอบแทน/การตลาด)';
+        } else if (rawAmount < 200000000) {
+          fsIndex = 3;
+          fsNote = ' | ต้องทำ Feasibility Study โดยผู้ชำนาญการอิสระที่มีผลงานประจักษ์';
+        } else {
+          fsIndex = 4;
+          fsNote = ' | ต้องทำ Feasibility Study โดยผู้ประเมิน ก.ล.ต. หรือที่ราชการยอมรับ';
+        }
+        prepText += fsNote;
+        const fsCard = document.getElementById(`card-fs-${fsIndex}`);
+        if (fsCard) {
+          fsCard.classList.add('tier-highlight');
+        }
+      }
+
+      badgeEl.textContent = methodText;
+      titleEl.textContent = rangeText;
+      prepEl.textContent = prepText;
+      approverEl.textContent = approverText;
+    }
+
+    // Print Infographic as single-page A4
+    function printInfographic() {
+      switchView('poster');
+      clearHighlights();
+      window.print();
+    }
+  </script>
+</body>
+</html>
